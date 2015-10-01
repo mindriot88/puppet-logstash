@@ -50,6 +50,8 @@ LOG_DIR=/var/log/logstash
 # logstash configuration directory
 CONF_DIR=/etc/logstash/conf.d
 
+PLUGIN_OPS="--pluginpath /etc/logstash/plugins"
+
 # logstash log file
 LOG_FILE=$LOG_DIR/$NAME.log
 
@@ -72,7 +74,7 @@ fi
 # Define other required variables
 PID_FILE=/var/run/$NAME.pid
 DAEMON=$LS_JAR
-DAEMON_OPTS="agent -f ${CONF_DIR} ${LS_OPTS}"
+DAEMON_OPTS="agent -f ${CONF_DIR} ${PLUGIN_OPS} ${LS_OPTS}"
 
 is_true() {
     if [ "x$1" = "xtrue" -o "x$1" = "xyes" -o "x$1" = "x1" ] ; then

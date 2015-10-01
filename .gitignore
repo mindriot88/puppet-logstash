@@ -6,3 +6,5 @@ spec/fixtures
 .vagrant
 .ruby-version
 pkg/
+files/
+templates/etc/logstash/
